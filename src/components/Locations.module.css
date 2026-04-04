@@ -1,0 +1,167 @@
+.locations {
+  padding: 80px 48px;
+  background: var(--white);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.card {
+  padding: 40px;
+  position: relative;
+}
+
+.dark {
+  background: var(--black);
+}
+
+.light {
+  background: var(--gray-100);
+}
+
+.num {
+  font-family: var(--font-display);
+  font-size: 80px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.06);
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.numDark {
+  color: rgba(0, 0, 0, 0.05);
+}
+
+.locationLabel {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 10px;
+}
+
+.locationName {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.nameLight {
+  color: var(--white);
+}
+
+.nameDark {
+  color: var(--black);
+}
+
+.detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.detailIcon {
+  width: 16px;
+  height: 16px;
+  fill: var(--red);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.detailLight {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.detailDark {
+  color: var(--gray-600);
+}
+
+.hoursGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+  font-size: 13px;
+  margin: 16px 0;
+}
+
+.hoursRow {
+  display: flex;
+  gap: 16px;
+}
+
+.hoursDay {
+  font-weight: 500;
+  min-width: 80px;
+}
+
+.hoursDayLight {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hoursDayDark {
+  color: var(--black);
+}
+
+.hoursTimeLight {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.hoursTimeDark {
+  color: var(--gray-600);
+}
+
+.directionsBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1.5px solid;
+  padding: 10px 20px;
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.15s;
+}
+
+.directionsBtnLight {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.directionsBtnLight:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.directionsBtnDark {
+  color: var(--black);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.directionsBtnDark:hover {
+  background: var(--red);
+  color: var(--white);
+  border-color: var(--red);
+}
+
+@media (max-width: 900px) {
+  .locations {
+    grid-template-columns: 1fr;
+  }
+}

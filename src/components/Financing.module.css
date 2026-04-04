@@ -1,0 +1,219 @@
+.financing {
+  background: var(--black);
+  padding: 80px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.financingBg {
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: 160px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.body {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+
+.body strong {
+  color: var(--white);
+  font-weight: 500;
+}
+
+.creditTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 36px;
+}
+
+.creditTag {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.creditTagHighlight {
+  border-color: var(--red);
+  color: var(--white);
+  background: rgba(200, 16, 46, 0.15);
+}
+
+.stepsList {
+  list-style: none;
+  margin-bottom: 36px;
+  padding: 0;
+}
+
+.stepItem {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stepItem:last-child {
+  border-bottom: none;
+}
+
+.stepNum {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--red);
+  line-height: 1;
+  min-width: 44px;
+}
+
+.stepText h4 {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  margin-bottom: 2px;
+}
+
+.stepText p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.5;
+}
+
+/* Loan Calculator */
+.calc {
+  background: var(--gray-800);
+  padding: 36px;
+  border-top: 3px solid var(--red);
+}
+
+.calcTitle {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+
+.calcRow {
+  margin-bottom: 20px;
+}
+
+.calcLabel {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 8px;
+}
+
+.calcLabel span {
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.rangeInput {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.15);
+  outline: none;
+}
+
+.rangeInput::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: var(--red);
+  cursor: pointer;
+  border-radius: 0;
+}
+
+.rangeInput::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: var(--red);
+  cursor: pointer;
+  border-radius: 0;
+  border: none;
+}
+
+.calcResult {
+  background: var(--red);
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.calcResultLabel {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.calcResultValue {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: -0.01em;
+}
+
+.calcResultNote {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+  .financing {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 56px 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .stepItem {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .financingBg {
+    display: none;
+  }
+}

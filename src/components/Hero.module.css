@@ -1,0 +1,168 @@
+.hero {
+  min-height: 85vh;
+  background: var(--black);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/hero_car_colorful_1775288955677.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(10, 10, 10, 0.92) 0%,
+    rgba(10, 10, 10, 0.75) 50%,
+    rgba(10, 10, 10, 0.4) 100%
+  );
+}
+
+.bgPattern {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 40px,
+    rgba(200, 16, 46, 0.035) 40px,
+    rgba(200, 16, 46, 0.035) 41px
+  );
+  pointer-events: none;
+}
+
+.content {
+  padding: 80px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: fadeUp 0.5s ease both;
+}
+
+.eyebrow::before {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--red);
+}
+
+.h1 {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 7vw, 88px);
+  font-weight: 900;
+  line-height: 0.92;
+  text-transform: uppercase;
+  color: var(--white);
+  letter-spacing: -0.01em;
+  margin-bottom: 28px;
+  animation: fadeUp 0.5s 0.1s ease both;
+}
+
+.accent {
+  color: var(--red);
+}
+
+.sub {
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 540px;
+  line-height: 1.65;
+  margin-bottom: 40px;
+  animation: fadeUp 0.5s 0.2s ease both;
+}
+
+.sub strong {
+  color: var(--white);
+  font-weight: 500;
+}
+
+.ctaRow {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+  animation: fadeUp 0.5s 0.3s ease both;
+}
+
+.trustRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  animation: fadeUp 0.5s 0.4s ease both;
+}
+
+.trustBadge {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 8px 14px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.trustBadge svg {
+  width: 14px;
+  height: 14px;
+  fill: var(--gold);
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .content {
+    padding: 64px 24px 48px;
+  }
+  .heroOverlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(10, 10, 10, 0.85) 0%,
+      rgba(10, 10, 10, 0.6) 100%
+    );
+  }
+}
+
+@media (max-width: 600px) {
+  .ctaRow {
+    flex-direction: column;
+  }
+  .ctaRow button,
+  .ctaRow a {
+    width: 100%;
+    text-align: center;
+  }
+  .h1 {
+    font-size: 48px;
+  }
+}
