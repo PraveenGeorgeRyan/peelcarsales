@@ -17,12 +17,21 @@ const barlowCondensed = Barlow_Condensed({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.peelcarsales.com"),
   title: {
-    default: "Peel Car Sales — Used Cars Mississauga & Oakville | Bad Credit Car Loans GTA",
-    template: "%s | Peel Car Sales — Used Cars Mississauga & Oakville",
+    default: "Peel Car Sales — Car Dealership Near Me | Used Cars for Sale Toronto, Mississauga & Oakville",
+    template: "%s | Peel Car Sales — Car Dealership Near Me | Used Cars Toronto",
   },
   description:
-    "150+ quality used cars for sale in Mississauga & Oakville. Bad credit, no credit, new to Canada — get approved in 5 minutes. AutoTrader Best Priced Dealer 2024 & 2025. Affordable used SUVs, trucks, sedans near Toronto, Brampton, Burlington. Trade-in & financing available. Call 905-678-0048.",
+    "Car dealership near me — 150+ used cars for sale in Toronto, Mississauga & Oakville. Bad credit car loans, car financing Toronto, no credit OK. Used car dealerships near me serving GTA, Brampton, Burlington. AutoTrader Best Priced Dealer 2025. Cars for sale near me — approved in 5 minutes. Call 905-678-0048.",
   keywords: [
+    // Top 5 highest search volume keywords (Toronto GTA)
+    "car dealerships near me",
+    "used cars Toronto",
+    "used cars for sale Toronto",
+    "used car dealerships near me",
+    "cars for sale Toronto",
+    "cars for sale near me",
+    "car financing Toronto",
+    "bad credit car loans Toronto",
     // Primary high-volume keywords
     "used cars Mississauga",
     "used cars Oakville",
@@ -30,7 +39,6 @@ export const metadata: Metadata = {
     "used car dealer Oakville",
     "used cars near me",
     "used cars for sale GTA",
-    "used cars Toronto",
     "used cars Brampton",
     // Bad credit / financing keywords (high commercial intent)
     "bad credit car loans Mississauga",

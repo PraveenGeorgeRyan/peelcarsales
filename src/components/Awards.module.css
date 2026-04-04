@@ -68,8 +68,34 @@
   }
 }
 
+.awardCta {
+  background: var(--red);
+  color: var(--white);
+  padding: 12px 24px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  transition: background 0.18s;
+}
+
+.awardCta:hover {
+  background: var(--red-light);
+}
+
 @media (max-width: 600px) {
   .divider {
     display: none;
+  }
+  .awardCta {
+    width: 100%;
+    justify-content: center;
   }
 }

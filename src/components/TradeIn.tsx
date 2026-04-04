@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useLeadForm } from "./LeadFormContext";
 import styles from "./TradeIn.module.css";
 
 const features = [
@@ -11,24 +11,8 @@ const features = [
   "Free CarFax vehicle history check included",
 ];
 
-const tradeMakes = ["Honda", "Toyota", "Ford", "Hyundai", "Mazda", "Nissan", "BMW", "Mercedes-Benz", "Chevrolet", "Dodge", "Kia", "Jeep", "Ram", "Other"];
-const years = ["2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014 or older"];
-const kmRanges = ["Under 50,000 km", "50,000 – 100,000 km", "100,000 – 150,000 km", "150,000 – 200,000 km", "Over 200,000 km"];
-
 export default function TradeIn() {
-  const [submitted, setSubmitted] = useState(false);
-
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    const form = e.target as HTMLFormElement;
-    const name = (form.elements.namedItem("trade-name") as HTMLInputElement).value.trim();
-    const phone = (form.elements.namedItem("trade-phone") as HTMLInputElement).value.trim();
-    if (!name || !phone) {
-      alert("Please enter your name and phone number.");
-      return;
-    }
-    setSubmitted(true);
-  }
+  const { open } = useLeadForm();
 
   return (
     <section className={styles.tradein} id="tradein" aria-label="Sell or trade in your car in Mississauga and Oakville">
@@ -72,70 +56,19 @@ export default function TradeIn() {
           Vehicle Estimate
         </div>
         <p className={styles.formSub}>
-          Fill in your car details — we&apos;ll call you with a cash offer within 24 hours.
+          Submit your details and we&apos;ll call you with a cash offer within 24 hours — no obligation.
         </p>
 
-        <form onSubmit={handleSubmit}>
-          <div className="field-group full">
-            <div className="field-wrap">
-              <label htmlFor="trade-name">Your name</label>
-              <input type="text" id="trade-name" name="trade-name" placeholder="Your full name" />
-            </div>
-          </div>
-          <div className="field-group full">
-            <div className="field-wrap">
-              <label htmlFor="trade-phone">Phone number</label>
-              <input type="tel" id="trade-phone" name="trade-phone" placeholder="(416) 555-0100" />
-            </div>
-          </div>
-          <div className="field-group">
-            <div className="field-wrap">
-              <label htmlFor="trade-make">Vehicle make</label>
-              <select id="trade-make" name="trade-make">
-                <option value="">Select make</option>
-                {tradeMakes.map((m) => (
-                  <option key={m}>{m}</option>
-                ))}
-              </select>
-            </div>
-            <div className="field-wrap">
-              <label htmlFor="trade-year">Year</label>
-              <select id="trade-year" name="trade-year">
-                <option value="">Year</option>
-                {years.map((y) => (
-                  <option key={y}>{y}</option>
-                ))}
-              </select>
-            </div>
-          </div>
-          <div className="field-group full">
-            <div className="field-wrap">
-              <label htmlFor="trade-km">Approximate kilometres</label>
-              <select id="trade-km" name="trade-km">
-                <option value="">Select range</option>
-                {kmRanges.map((k) => (
-                  <option key={k}>{k}</option>
-                ))}
-              </select>
-            </div>
-          </div>
+        <button onClick={open} className={styles.submitBtn}>
+          Get My Cash Offer
+          <svg viewBox="0 0 24 24" style={{ width: 16, height: 16, fill: "white" }}>
+            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+          </svg>
+        </button>
 
-          <button
-            type="submit"
-            className={styles.submitBtn}
-            disabled={submitted}
-            style={submitted ? { background: "#1a7a1a" } : {}}
-          >
-            {submitted ? "Offer Request Sent!" : (
-              <>
-                Get My Cash Offer
-                <svg viewBox="0 0 24 24" style={{ width: 16, height: 16, fill: "white" }}>
-                  <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
-                </svg>
-              </>
-            )}
-          </button>
-        </form>
+        <button onClick={open} className={styles.secondaryBtn}>
+          Book a Trade-In Appraisal
+        </button>
       </div>
     </section>
   );

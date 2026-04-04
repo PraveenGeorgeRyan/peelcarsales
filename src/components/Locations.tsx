@@ -1,3 +1,6 @@
+"use client";
+
+import { useLeadForm } from "./LeadFormContext";
 import styles from "./Locations.module.css";
 
 function LocationIcon() {
@@ -31,6 +34,8 @@ const hours = [
 ];
 
 export default function Locations() {
+  const { open } = useLeadForm();
+
   return (
     <section className={styles.locations} id="locations" aria-label="Peel Car Sales dealership locations — Mississauga and Oakville, Ontario">
       {/* Mississauga */}
@@ -65,6 +70,9 @@ export default function Locations() {
         >
           Get Directions <ArrowIcon />
         </a>
+        <button onClick={open} className={`${styles.visitBtn} ${styles.visitBtnLight}`}>
+          Book a Visit
+        </button>
       </div>
 
       {/* Oakville */}
@@ -99,6 +107,9 @@ export default function Locations() {
         >
           Get Directions <ArrowIcon />
         </a>
+        <button onClick={open} className={`${styles.visitBtn} ${styles.visitBtnDark}`}>
+          Book a Visit
+        </button>
       </div>
     </section>
   );

@@ -18,11 +18,11 @@ export default function Hero() {
         </div>
 
         <h1 className={styles.h1}>
-          Used Cars for Sale.
+          Car Dealership
           <br />
-          <span className={styles.accent}>Bad Credit</span>
+          <span className={styles.accent}>Near Me</span>
           <br />
-          Welcome.
+          Used Cars for Sale Toronto.
         </h1>
 
         <p className={styles.sub}>

@@ -5,17 +5,13 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr) auto;
 }
 
 .item {
   padding: 28px 24px;
   text-align: center;
   border-right: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.item:last-child {
-  border-right: none;
 }
 
 .num {
@@ -37,8 +33,42 @@
   margin-top: 4px;
 }
 
+.ctaItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 28px;
+}
+
+.ctaBtn {
+  background: var(--white);
+  color: var(--red);
+  padding: 14px 28px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  transition: all 0.18s;
+}
+
+.ctaBtn:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .ctaItem {
+    grid-column: 1 / -1;
+    padding: 16px 24px;
   }
 }

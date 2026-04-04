@@ -1,3 +1,6 @@
+"use client";
+
+import { useLeadForm } from "./LeadFormContext";
 import styles from "./Awards.module.css";
 
 const awards = [
@@ -30,6 +33,8 @@ function TrophyIcon() {
 }
 
 export default function Awards() {
+  const { open } = useLeadForm();
+
   return (
     <div className={styles.awards}>
       {awards.map((a, i) => (
@@ -46,6 +51,13 @@ export default function Awards() {
           {i < awards.length - 1 && <div className={styles.divider} />}
         </div>
       ))}
+      <div className={styles.divider} />
+      <button onClick={open} className={styles.awardCta}>
+        Talk to Our Award-Winning Team
+        <svg viewBox="0 0 24 24" style={{ width: 14, height: 14, fill: "currentColor" }}>
+          <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+        </svg>
+      </button>
     </div>
   );
 }

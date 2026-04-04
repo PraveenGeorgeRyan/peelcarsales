@@ -157,6 +157,13 @@ export default function Financing() {
             </div>
             <div className={styles.calcResultValue}>${monthly().toLocaleString()}/mo</div>
           </div>
+
+          <button onClick={open} className={styles.calcCta}>
+            Check My Eligibility
+            <svg viewBox="0 0 24 24" style={{ width: 16, height: 16, fill: "currentColor" }}>
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>

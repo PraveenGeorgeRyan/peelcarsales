@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useLeadForm } from "./LeadFormContext";
 import styles from "./FAQ.module.css";
 
 const faqs = [
@@ -35,6 +36,7 @@ const faqs = [
 ];
 
 export default function FAQ() {
+  const { open } = useLeadForm();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   function toggle(i: number) {
@@ -57,20 +59,29 @@ export default function FAQ() {
         </p>
       </div>
 
-      <div className={styles.list}>
-        {faqs.map((faq, i) => (
-          <div key={i} className={`${styles.item} ${openIndex === i ? styles.open : ""}`}>
-            <div className={styles.question} onClick={() => toggle(i)}>
-              {faq.q}
-              <div className={`${styles.icon} ${openIndex === i ? styles.iconOpen : ""}`}>
-                {openIndex === i ? "\u2212" : "+"}
+      <div>
+        <div className={styles.list}>
+          {faqs.map((faq, i) => (
+            <div key={i} className={`${styles.item} ${openIndex === i ? styles.open : ""}`}>
+              <div className={styles.question} onClick={() => toggle(i)}>
+                {faq.q}
+                <div className={`${styles.icon} ${openIndex === i ? styles.iconOpen : ""}`}>
+                  {openIndex === i ? "\u2212" : "+"}
+                </div>
+              </div>
+              <div className={`${styles.answer} ${openIndex === i ? styles.answerOpen : ""}`}>
+                {faq.a}
               </div>
             </div>
-            <div className={`${styles.answer} ${openIndex === i ? styles.answerOpen : ""}`}>
-              {faq.a}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        <button onClick={open} className={styles.faqCta}>
+          Still Have Questions? Talk to Us
+          <svg viewBox="0 0 24 24" style={{ width: 16, height: 16, fill: "currentColor" }}>
+            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+          </svg>
+        </button>
       </div>
     </section>
   );
