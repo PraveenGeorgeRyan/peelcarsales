@@ -23,9 +23,9 @@
 }
 
 .brand p {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.4);
-  line-height: 1.6;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.7;
 }
 
 .contactTitle {
@@ -60,6 +60,36 @@
 
 .contactItem a:hover {
   color: var(--red);
+}
+
+.callNowBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--red);
+  color: var(--white);
+  padding: 10px 20px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.18s;
+  border: none;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+.callNowBtn:hover {
+  background: var(--red-light);
+}
+
+.callNowBtn svg {
+  width: 14px;
+  height: 14px;
+  fill: var(--white);
 }
 
 .socialRow {

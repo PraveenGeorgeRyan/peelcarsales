@@ -48,9 +48,9 @@ export default function FAQ() {
       <div>
         <div className="section-eyebrow">Used car buying &amp; financing FAQ</div>
         <h2 className="section-h2" style={{ color: "var(--white)" }}>
-          Used Car Buying
+          Used Cars for Sale GTA
           <br />
-          Questions
+          — Your Questions Answered
         </h2>
         <p className={styles.contactNote}>
           Still have questions? Call us at{" "}

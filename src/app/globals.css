@@ -26,8 +26,8 @@ body {
   font-family: var(--font-body);
   background: var(--white);
   color: var(--black);
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.7;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
@@ -77,7 +77,7 @@ a { text-decoration: none; color: inherit; }
    =========================== */
 .section-eyebrow {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;

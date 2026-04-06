@@ -19,9 +19,9 @@ export default function TradeIn() {
       <div>
         <div className="section-eyebrow">Sell your car or trade in — Mississauga &amp; Oakville</div>
         <h2 className="section-h2">
-          We Buy Used Cars
+          Sell My Car Mississauga
           <br />
-          in the GTA
+          — Trade In Oakville
         </h2>
         <p className={styles.desc}>
           Looking to <strong>sell your car in Mississauga</strong> or <strong>trade in your vehicle in Oakville</strong>?

@@ -21,11 +21,11 @@ export default function Inventory() {
   return (
     <section className={styles.section} id="inventory" aria-label="Browse used cars for sale in Mississauga and Oakville">
       <div className={styles.header}>
-        <div className="section-eyebrow">Our showroom</div>
+        <div className="section-eyebrow">Browse used cars for sale in Mississauga &amp; Oakville</div>
         <h2 className="section-h2">
-          Quality Vehicles,
+          Used Cars, SUVs &amp; Trucks
           <br />
-          Ready to Drive
+          for Sale Near You
         </h2>
       </div>
 

@@ -44,9 +44,9 @@ export default function Financing() {
       <div className={styles.content}>
         <div className="section-eyebrow">Bad Credit Car Loans — Any Credit Welcome</div>
         <h2 className="section-h2" style={{ color: "var(--white)" }}>
-          Car Loan Approved
+          Bad Credit Car Loans
           <br />
-          in 5 Minutes
+          Approved in 5 Minutes
         </h2>
 
         <p className={styles.body}>

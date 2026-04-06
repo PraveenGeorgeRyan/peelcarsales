@@ -21,9 +21,9 @@ export default function Reviews() {
         <div>
           <div className="section-eyebrow">Google reviews — used car dealership Mississauga &amp; Oakville</div>
           <h2 className="section-h2">
-            4.9-Star Rated
+            Best Used Car Dealer
             <br />
-            Used Car Dealer
+            Mississauga &amp; Oakville
           </h2>
         </div>
         <div className={styles.ratingBlock}>

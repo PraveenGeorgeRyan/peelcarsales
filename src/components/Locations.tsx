@@ -48,10 +48,10 @@ export default function Locations() {
           <LocationIcon />
           2701 Derry Road East, Mississauga, Ontario L4T 1A2
         </div>
-        <div className={`${styles.detail} ${styles.detailLight}`}>
+        <a href="tel:9056780048" className={styles.callNowBtn} aria-label="Call Peel Car Sales Mississauga">
           <PhoneIcon />
-          905-678-0048
-        </div>
+          Call Now — 905-678-0048
+        </a>
 
         <div className={styles.hoursGrid}>
           {hours.map((h) => (
@@ -85,10 +85,10 @@ export default function Locations() {
           <LocationIcon />
           333 Wyecroft Road, Unit 11, Oakville, ON L6K 2H2
         </div>
-        <div className={`${styles.detail} ${styles.detailDark}`}>
+        <a href="tel:9056780048" className={styles.callNowBtn} aria-label="Call Peel Car Sales Oakville">
           <PhoneIcon />
-          905-678-0048
-        </div>
+          Call Now — 905-678-0048
+        </a>
 
         <div className={styles.hoursGrid}>
           {hours.map((h) => (

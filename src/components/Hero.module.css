@@ -51,7 +51,7 @@
 
 .eyebrow {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -88,11 +88,11 @@
 }
 
 .sub {
-  font-size: 18px;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.75);
-  max-width: 540px;
-  line-height: 1.65;
+  font-size: 20px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 560px;
+  line-height: 1.7;
   margin-bottom: 40px;
   animation: fadeUp 0.5s 0.2s ease both;
 }
