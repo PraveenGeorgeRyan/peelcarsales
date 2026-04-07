@@ -1,6 +1,9 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "@/lib/firebase";
+import { sendLeadNotification } from "@/lib/emailjs";
 import { useLeadForm } from "./LeadFormContext";
 import styles from "./LeadFormModal.module.css";
 
@@ -10,6 +13,8 @@ export default function LeadFormModal() {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const overlayRef = useRef<HTMLDivElement>(null);
   const nameRef = useRef<HTMLInputElement>(null);
 
@@ -39,13 +44,39 @@ export default function LeadFormModal() {
     if (e.target === overlayRef.current) close();
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!name.trim() || !phone.trim()) {
-      alert("Please enter your name and phone number.");
+      setError("Please enter your name and phone number.");
       return;
     }
-    setSubmitted(true);
+
+    setLoading(true);
+    setError("");
+
+    const leadData = {
+      name: name.trim(),
+      phone: phone.trim(),
+      email: email.trim() || "",
+      createdAt: serverTimestamp(),
+      source: window.location.pathname,
+    };
+
+    try {
+      await addDoc(collection(db, "leads"), leadData);
+
+      // Send email notification (fire-and-forget — don't block if email fails)
+      sendLeadNotification(leadData).catch((err) =>
+        console.error("EmailJS failed:", err)
+      );
+
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Lead submission failed:", err);
+      setError("Something went wrong. Please try again or call us at 905-678-0048.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   function handleClose() {
@@ -55,6 +86,7 @@ export default function LeadFormModal() {
       setName("");
       setPhone("");
       setEmail("");
+      setError("");
     }, 300);
   }
 
@@ -118,11 +150,19 @@ export default function LeadFormModal() {
               />
             </div>
 
-            <button type="submit" className={styles.submitBtn}>
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
-              </svg>
-              Submit
+            {error && <p className={styles.error}>{error}</p>}
+
+            <button type="submit" className={styles.submitBtn} disabled={loading}>
+              {loading ? (
+                "Submitting..."
+              ) : (
+                <>
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                  </svg>
+                  Submit
+                </>
+              )}
             </button>
 
             <p className={styles.privacy}>
