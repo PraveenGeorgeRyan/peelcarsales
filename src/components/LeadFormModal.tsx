@@ -70,6 +70,20 @@ export default function LeadFormModal() {
         console.error("EmailJS failed:", err)
       );
 
+      // Send to LeadsBridge → AutoRaptor CRM (fire-and-forget)
+      const nameParts = name.trim().split(" ");
+      fetch("https://webhooks.leadsbridge.com/api/6b40dac227f514ccc3922ed5aee79201", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          first_name: nameParts[0] || "",
+          last_name: nameParts.slice(1).join(" ") || "",
+          email: email.trim() || "",
+          phone: phone.trim(),
+          source: "Landing Page",
+        }),
+      }).catch((err) => console.error("LeadsBridge failed:", err));
+
       setSubmitted(true);
     } catch (err) {
       console.error("Lead submission failed:", err);
