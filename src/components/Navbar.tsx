@@ -1,10 +1,6 @@
-"use client";
-
-import { useLeadForm } from "./LeadFormContext";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
-  const { open } = useLeadForm();
 
   return (
     <nav className={styles.nav} aria-label="Main navigation — Peel Car Sales used car dealership Mississauga Oakville">
@@ -19,14 +15,14 @@ export default function Navbar() {
           <svg viewBox="0 0 24 24" fill="currentColor" className={styles.callIcon}>
             <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
           </svg>
-          Call Now — 905-678-0048
+          Speak to a Car Expert — 905-678-0048
         </a>
 
         <a href="tel:6476787778" className={styles.callBtn} aria-label="Call or WhatsApp Peel Car Sales at 647-678-7778">
           <svg viewBox="0 0 24 24" fill="currentColor" className={styles.callIcon}>
             <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
           </svg>
-          Call Now — 647-678-7778
+          Get Approved in 5 Min — 647-678-7778
         </a>
       </div>
 

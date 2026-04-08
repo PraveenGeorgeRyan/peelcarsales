@@ -35,6 +35,13 @@ export default function TradeIn() {
           ))}
         </ul>
 
+        <button onClick={open} className={styles.valuationBtn}>
+          Get a Free Valuation
+          <svg viewBox="0 0 24 24" style={{ width: 14, height: 14, fill: "currentColor" }}>
+            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+          </svg>
+        </button>
+
         <p className={styles.whatsappLabel}>Prefer to send photos first? Text or WhatsApp us:</p>
         <a
           href="https://wa.me/16476787778"

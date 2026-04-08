@@ -1,6 +1,11 @@
+"use client";
+
+import { useLeadForm } from "./LeadFormContext";
 import styles from "./SeoContent.module.css";
 
 export default function SeoContent() {
+  const { open } = useLeadForm();
+
   return (
     <section className={styles.section} aria-label="About Peel Car Sales — used cars Mississauga, Oakville, and GTA">
       <div className={styles.inner}>
@@ -18,6 +23,18 @@ export default function SeoContent() {
           Whether you need a <strong>used car under $15,000 in Mississauga</strong> or a <strong>used car under $10,000
           in the GTA</strong>, we have the inventory and the prices to match.
         </p>
+
+        <div className={styles.ctaRow}>
+          <button onClick={open} className={styles.ctaPrimary}>
+            Find Your Perfect Car
+            <svg viewBox="0 0 24 24" style={{ width: 16, height: 16, fill: "currentColor" }}>
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+            </svg>
+          </button>
+          <button onClick={open} className={styles.ctaOutline}>
+            Get Pre-Approved Today
+          </button>
+        </div>
 
         <p className={styles.text}>
           We specialize in <strong>bad credit car loans in Mississauga</strong>,{" "}
@@ -42,6 +59,18 @@ export default function SeoContent() {
           search online for <strong>used cars near me</strong>. We serve customers from{" "}
           <strong>Etobicoke, North York, Burlington</strong>, and communities across Ontario — your next car is waiting.
         </p>
+
+        <div className={styles.ctaRow}>
+          <button onClick={open} className={styles.ctaPrimary}>
+            Get a Free Trade-In Quote
+            <svg viewBox="0 0 24 24" style={{ width: 16, height: 16, fill: "currentColor" }}>
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+            </svg>
+          </button>
+          <button onClick={open} className={styles.ctaOutline}>
+            Talk to Our Team
+          </button>
+        </div>
       </div>
     </section>
   );

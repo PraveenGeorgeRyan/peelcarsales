@@ -1,6 +1,11 @@
+"use client";
+
+import { useLeadForm } from "./LeadFormContext";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
+  const { open } = useLeadForm();
+
   return (
     <>
       <footer className={styles.footer} aria-label="Peel Car Sales — used car dealership serving Mississauga, Oakville, and the GTA">
@@ -33,6 +38,12 @@ export default function Footer() {
             <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" /></svg>
             333 Wyecroft Rd, Unit 11, Oakville, ON
           </div>
+          <button onClick={open} className={styles.callbackBtn}>
+            Request a Callback
+            <svg viewBox="0 0 24 24" style={{ width: 14, height: 14, fill: "currentColor" }}>
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+            </svg>
+          </button>
         </div>
 
       </footer>

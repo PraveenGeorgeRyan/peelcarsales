@@ -38,6 +38,9 @@ export default function Hero() {
           <button onClick={open} className="btn btn-outline" style={{ padding: "15px 28px", fontSize: "15px" }}>
             Browse inventory
           </button>
+          <button onClick={open} className="btn btn-outline" style={{ padding: "15px 28px", fontSize: "15px" }}>
+            Schedule a Test Drive
+          </button>
         </div>
 
         <div className={styles.trustRow}>

@@ -59,9 +59,9 @@ export default function Financing() {
 
         <div className={styles.creditTags}>
           {creditTags.map((t) => (
-            <div key={t.label} className={`${styles.creditTag} ${t.highlight ? styles.creditTagHighlight : ""}`}>
+            <button key={t.label} onClick={open} className={`${styles.creditTag} ${t.highlight ? styles.creditTagHighlight : ""}`}>
               {t.label}
-            </div>
+            </button>
           ))}
         </div>
 

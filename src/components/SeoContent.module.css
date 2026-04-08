@@ -37,6 +37,53 @@
   font-weight: 600;
 }
 
+.ctaRow {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 32px 0;
+}
+
+.ctaPrimary {
+  background: var(--red);
+  color: var(--white);
+  padding: 14px 28px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.18s;
+}
+
+.ctaPrimary:hover {
+  background: var(--red-light);
+}
+
+.ctaOutline {
+  background: transparent;
+  color: var(--black);
+  padding: 13px 28px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1.5px solid var(--gray-200);
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.ctaOutline:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
 @media (max-width: 900px) {
   .section {
     padding: 48px 24px;

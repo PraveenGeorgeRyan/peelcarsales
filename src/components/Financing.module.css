@@ -52,6 +52,15 @@
   padding: 6px 14px;
   border: 1.5px solid rgba(255, 255, 255, 0.2);
   color: rgba(255, 255, 255, 0.8);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.creditTag:hover {
+  border-color: var(--red);
+  background: rgba(200, 16, 46, 0.15);
+  color: var(--white);
 }
 
 .creditTagHighlight {
