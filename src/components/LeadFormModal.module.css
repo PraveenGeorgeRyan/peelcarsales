@@ -156,22 +156,27 @@
 }
 
 .doneBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   margin-top: 20px;
-  background: var(--black);
+  background: var(--red);
   color: var(--white);
-  padding: 12px 40px;
+  padding: 14px 32px;
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 14px;
+  font-weight: 800;
+  font-size: 15px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   border: none;
   cursor: pointer;
+  text-decoration: none;
   transition: background 0.18s;
 }
 
 .doneBtn:hover {
-  background: var(--red);
+  background: var(--red-light);
 }
 
 @keyframes fadeIn {
