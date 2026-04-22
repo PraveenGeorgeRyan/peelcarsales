@@ -1,5 +1,6 @@
 import { LeadFormProvider } from "@/components/LeadFormContext";
 import LeadFormModal from "@/components/LeadFormModal";
+import AutoOpenLeadForm from "@/components/AutoOpenLeadForm";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import StatsBar from "@/components/StatsBar";
@@ -22,6 +23,7 @@ export default function Home() {
     <LeadFormProvider>
       <StructuredData />
       <LeadFormModal />
+      <AutoOpenLeadForm />
       <FloatingButtons />
       <header>
         <Navbar />
