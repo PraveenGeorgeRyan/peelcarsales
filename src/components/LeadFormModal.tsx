@@ -117,9 +117,9 @@ export default function LeadFormModal() {
 
         {!submitted ? (
           <form onSubmit={handleSubmit}>
-            <h2 className={styles.heading}>Get Your Dream Car Today</h2>
+            <h2 className={styles.heading}>Claim Your $1,000 Discount Now</h2>
             <p className={styles.sub}>
-              Fill in your details and our team will reach out within 1 hour with the best deals.
+              Limited-time offer. Fill in your details and our team will reach out within 1 hour to lock in your savings.
             </p>
 
             <div className={styles.fieldWrap}>
