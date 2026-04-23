@@ -6,12 +6,12 @@ import styles from "./FAQ.module.css";
 
 const faqs = [
   {
-    q: "Can I get approved with bad credit?",
-    a: 'Yes — we work with all credit situations including new immigrants, students, first-time buyers, self-employed individuals, and those who have filed for bankruptcy. Our finance team gets most customers approved in as little as 5 minutes.',
+    q: "What kinds of used vehicles do you have?",
+    a: "We carry a wide selection of 150+ used cars, SUVs, trucks, and sedans from popular brands like Honda, Toyota, Ford, Hyundai, and Mercedes-Benz. Our inventory changes regularly — browse online or visit either showroom to see the latest arrivals.",
   },
   {
     q: "Do you have vehicles under $15,000?",
-    a: "Yes! We carry value deals starting well under $15,000. Our 2017 Ford Explorer is currently listed at $8,991. Browse our full inventory and filter by price to find options in your budget.",
+    a: "Yes! We carry value-priced vehicles starting well under $15,000. Our 2017 Ford Explorer is currently listed at $8,991. Browse our full inventory and filter by price to find options in your budget.",
   },
   {
     q: "Can I sell my car without buying one from you?",
@@ -44,9 +44,9 @@ export default function FAQ() {
   }
 
   return (
-    <section className={styles.faq} id="faq" aria-label="Frequently asked questions about buying used cars and bad credit car loans in Mississauga and Oakville">
+    <section className={styles.faq} id="faq" aria-label="Frequently asked questions about buying used cars at Peel Car Sales Mississauga and Oakville">
       <div>
-        <div className="section-eyebrow">Used car buying &amp; financing FAQ</div>
+        <div className="section-eyebrow">Used car buying FAQ</div>
         <h2 className="section-h2" style={{ color: "var(--white)" }}>
           Used Cars for Sale GTA
           <br />

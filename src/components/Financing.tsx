@@ -1,64 +1,49 @@
 "use client";
 
-import { useState, useCallback } from "react";
 import { useLeadForm } from "./LeadFormContext";
 import styles from "./Financing.module.css";
 
-const creditTags = [
-  { label: "Bad Credit", highlight: true },
-  { label: "No Credit", highlight: true },
-  { label: "New to Canada", highlight: false },
-  { label: "First-Time Buyer", highlight: false },
-  { label: "Self-Employed", highlight: false },
-  { label: "Student", highlight: false },
-  { label: "Bankruptcy", highlight: false },
+const features = [
+  { label: "150+ Vehicles in Stock", highlight: true },
+  { label: "Two GTA Locations", highlight: true },
+  { label: "Free CarFax Reports", highlight: false },
+  { label: "Certified Pre-Owned", highlight: false },
+  { label: "Trade-Ins Welcome", highlight: false },
+  { label: "Same-Day Delivery", highlight: false },
+  { label: "Transparent Pricing", highlight: false },
 ];
 
 const steps = [
-  { num: "01", title: "Fill out our 60-second form", desc: "Name, phone, and vehicle preference — that's all we need to get started." },
-  { num: "02", title: "Get approved in 5 minutes", desc: "Our finance team works fast. We call you back with your approval the same day." },
-  { num: "03", title: "Pick your vehicle", desc: "Choose from 150+ vehicles in Mississauga and Oakville, or use our Car Finder." },
-  { num: "04", title: "Drive home today", desc: "Sign the paperwork and drive away — same day delivery available at both locations." },
+  { num: "01", title: "Tell us what you're looking for", desc: "Share your vehicle preferences and we'll help you find the right match from our inventory." },
+  { num: "02", title: "Visit our showroom", desc: "Come see the vehicles in person at our Mississauga or Oakville location — no appointment needed." },
+  { num: "03", title: "Take a test drive", desc: "Try before you buy. We'll answer any questions you have about the vehicle." },
+  { num: "04", title: "Drive home today", desc: "Complete the paperwork and drive away — same-day delivery available at both locations." },
 ];
 
-function calcMonthly(price: number, down: number, term: number, rate: number) {
-  const principal = price - down;
-  const monthlyRate = rate / 100 / 12;
-  if (monthlyRate === 0) return principal / term;
-  return (principal * monthlyRate * Math.pow(1 + monthlyRate, term)) / (Math.pow(1 + monthlyRate, term) - 1);
-}
-
 export default function Financing() {
-  const [price, setPrice] = useState(25000);
-  const [down, setDown] = useState(2500);
-  const [term, setTerm] = useState(60);
-  const [rate, setRate] = useState(8.9);
-
   const { open } = useLeadForm();
-  const monthly = useCallback(() => Math.round(calcMonthly(price, down, term, rate)), [price, down, term, rate]);
 
   return (
-    <section className={styles.financing} id="financing" aria-label="Bad credit car loans and auto financing in Mississauga, Oakville, and GTA">
-      <div className={styles.financingBg}>FINANCE</div>
+    <section className={styles.financing} id="how-it-works" aria-label="How to buy a used car at Peel Car Sales Mississauga and Oakville">
+      <div className={styles.financingBg}>SHOP</div>
 
       <div className={styles.content}>
-        <div className="section-eyebrow">Bad Credit Car Loans — Any Credit Welcome</div>
+        <div className="section-eyebrow">How It Works — Mississauga &amp; Oakville</div>
         <h2 className="section-h2" style={{ color: "var(--white)" }}>
-          Bad Credit Car Loans
+          Find Your Next Car
           <br />
-          Approved in 5 Minutes
+          In Four Easy Steps
         </h2>
 
         <p className={styles.body}>
-          Whether you have <strong>perfect credit</strong>, <strong>bad credit</strong>, or{" "}
-          <strong>no credit history</strong> — we work with lenders across Ontario to get you a{" "}
-          <strong>car loan</strong> and behind the wheel today.
-          New to Canada? Self-employed? First-time buyer? Student? We specialize in{" "}
-          <strong>bad credit auto financing in Mississauga, Oakville, Toronto, Brampton</strong>, and across the GTA.
+          Shopping for a <strong>used car in the GTA</strong>? At Peel Car Sales, we make the car-buying experience
+          straightforward and stress-free. Browse our inventory of <strong>150+ quality pre-owned vehicles</strong>,
+          take a test drive at our Mississauga or Oakville showroom, and drive home the same day. Serving Toronto,
+          Brampton, Burlington, Etobicoke, and the entire Greater Toronto Area.
         </p>
 
         <div className={styles.creditTags}>
-          {creditTags.map((t) => (
+          {features.map((t) => (
             <button key={t.label} onClick={open} className={`${styles.creditTag} ${t.highlight ? styles.creditTagHighlight : ""}`}>
               {t.label}
             </button>
@@ -82,84 +67,66 @@ export default function Financing() {
           className="btn btn-primary"
           style={{ padding: "16px 36px", fontSize: "15px" }}
         >
-          Apply for Financing Now
+          Browse Our Inventory
         </button>
       </div>
 
       <div>
         <div className={styles.calc}>
-          <div className={styles.calcTitle}>Estimate Your Payment</div>
+          <div className={styles.calcTitle}>Why Shop With Peel Car Sales</div>
 
-          <div className={styles.calcRow}>
-            <div className={styles.calcLabel}>
-              Vehicle price <span>${price.toLocaleString()}</span>
+          <div className={styles.infoList}>
+            <div className={styles.infoRow}>
+              <div className={styles.infoIcon}>
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                </svg>
+              </div>
+              <div>
+                <div className={styles.infoTitle}>150+ Vehicles in Stock</div>
+                <div className={styles.infoDesc}>Sedans, SUVs, trucks — find the right fit for your lifestyle and budget.</div>
+              </div>
             </div>
-            <input
-              type="range"
-              min={5000}
-              max={60000}
-              step={500}
-              value={price}
-              onChange={(e) => setPrice(Number(e.target.value))}
-              className={styles.rangeInput}
-            />
-          </div>
 
-          <div className={styles.calcRow}>
-            <div className={styles.calcLabel}>
-              Down payment <span>${down.toLocaleString()}</span>
+            <div className={styles.infoRow}>
+              <div className={styles.infoIcon}>
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                </svg>
+              </div>
+              <div>
+                <div className={styles.infoTitle}>Free CarFax Reports</div>
+                <div className={styles.infoDesc}>Every vehicle comes with a complete history report at no cost to you.</div>
+              </div>
             </div>
-            <input
-              type="range"
-              min={0}
-              max={20000}
-              step={250}
-              value={down}
-              onChange={(e) => setDown(Number(e.target.value))}
-              className={styles.rangeInput}
-            />
-          </div>
 
-          <div className={styles.calcRow}>
-            <div className={styles.calcLabel}>
-              Loan term <span>{term} months</span>
+            <div className={styles.infoRow}>
+              <div className={styles.infoIcon}>
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                </svg>
+              </div>
+              <div>
+                <div className={styles.infoTitle}>Award-Winning Service</div>
+                <div className={styles.infoDesc}>AutoTrader Best Priced Dealer 2024 &amp; 2025. CarGurus Top Rated Dealer.</div>
+              </div>
             </div>
-            <input
-              type="range"
-              min={24}
-              max={84}
-              step={12}
-              value={term}
-              onChange={(e) => setTerm(Number(e.target.value))}
-              className={styles.rangeInput}
-            />
-          </div>
 
-          <div className={styles.calcRow}>
-            <div className={styles.calcLabel}>
-              Interest rate <span>{rate.toFixed(1)}%</span>
+            <div className={styles.infoRow}>
+              <div className={styles.infoIcon}>
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                </svg>
+              </div>
+              <div>
+                <div className={styles.infoTitle}>Trade-Ins Welcome</div>
+                <div className={styles.infoDesc}>Get a fair market value for your current vehicle when you upgrade.</div>
+              </div>
             </div>
-            <input
-              type="range"
-              min={4.9}
-              max={24.9}
-              step={0.5}
-              value={rate}
-              onChange={(e) => setRate(Number(e.target.value))}
-              className={styles.rangeInput}
-            />
-          </div>
-
-          <div className={styles.calcResult}>
-            <div>
-              <div className={styles.calcResultLabel}>Est. monthly payment</div>
-              <div className={styles.calcResultNote}>Estimate only — subject to credit approval</div>
-            </div>
-            <div className={styles.calcResultValue}>${monthly().toLocaleString()}/mo</div>
           </div>
 
           <button onClick={open} className={styles.calcCta}>
-            Check My Eligibility
+            Contact Our Team
             <svg viewBox="0 0 24 24" style={{ width: 16, height: 16, fill: "currentColor" }}>
               <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
             </svg>

@@ -15,8 +15,8 @@ export default function Footer() {
           </div>
           <p>
             Used car dealership serving Mississauga, Oakville, Brampton, Toronto, Etobicoke, North York, Burlington,
-            and the Greater Toronto Area. AutoTrader Best Priced Dealer 2024 &amp; 2025. Bad credit car loans, vehicle
-            trade-ins, and affordable used cars, SUVs, and trucks for sale in Ontario.
+            and the Greater Toronto Area. AutoTrader Best Priced Dealer 2024 &amp; 2025. Vehicle trade-ins and quality
+            used cars, SUVs, and trucks for sale in Ontario.
           </p>
         </div>
 

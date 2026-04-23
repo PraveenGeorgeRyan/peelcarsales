@@ -7,7 +7,7 @@ export default function Hero() {
   const { open } = useLeadForm();
 
   return (
-    <section className={styles.hero} id="hero" aria-label="Used cars for sale in Mississauga and Oakville — bad credit car loans available">
+    <section className={styles.hero} id="hero" aria-label="Used cars for sale in Mississauga and Oakville">
       <div className={styles.heroImage} />
       <div className={styles.heroOverlay} />
       <div className={styles.bgPattern} />
@@ -27,16 +27,15 @@ export default function Hero() {
 
         <p className={styles.sub}>
           <strong>150+ quality used cars, SUVs, and trucks for sale</strong> at two GTA locations in Mississauga and Oakville.
-          Bad credit, no credit, new to Canada — our finance team gets you{" "}
-          <strong>approved for a car loan in as little as 5 minutes.</strong>
+          Browse our inventory online or visit our showroom today to find your next vehicle.
         </p>
 
         <div className={styles.ctaRow}>
           <button onClick={open} className="btn btn-primary" style={{ padding: "16px 32px", fontSize: "15px" }}>
-            Get approved now
+            Browse Inventory
           </button>
           <button onClick={open} className="btn btn-outline" style={{ padding: "15px 28px", fontSize: "15px" }}>
-            Browse inventory
+            Get a Quote
           </button>
           <button onClick={open} className="btn btn-outline" style={{ padding: "15px 28px", fontSize: "15px" }}>
             Schedule a Test Drive
@@ -60,7 +59,7 @@ export default function Hero() {
             <svg viewBox="0 0 24 24">
               <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
             </svg>
-            Any Credit Welcome
+            Certified Pre-Owned
           </div>
         </div>
       </div>

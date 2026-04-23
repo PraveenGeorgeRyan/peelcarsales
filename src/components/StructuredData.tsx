@@ -6,12 +6,12 @@ export default function StructuredData() {
     name: "Peel Car Sales",
     alternateName: "Peel Car Sales Mississauga",
     description:
-      "Quality used car dealership in Mississauga and Oakville, Ontario. 150+ vehicles in stock. Bad credit, no credit, new to Canada — approved in 5 minutes. AutoTrader Best Priced Dealer 2024 & 2025. Used SUVs, trucks, sedans. Trade-in and financing available.",
+      "Quality used car dealership in Mississauga and Oakville, Ontario. 150+ vehicles in stock. AutoTrader Best Priced Dealer 2024 & 2025. Used SUVs, trucks, sedans. Trade-ins welcome.",
     url: "https://www.peelcarsales.com",
     telephone: "+1-905-678-0048",
     priceRange: "$8,991 - $40,000+",
     currenciesAccepted: "CAD",
-    paymentAccepted: "Cash, Credit Card, Financing, Bank Transfer",
+    paymentAccepted: "Cash, Credit Card, Bank Transfer",
     image: "https://www.peelcarsales.com/og-image.jpg",
     logo: "https://www.peelcarsales.com/logo.png",
     sameAs: [
@@ -89,7 +89,7 @@ export default function StructuredData() {
         datePublished: "2025-01-15",
         reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
         reviewBody:
-          "Got my loan approved within 5 minutes. Best car buying experience. Must recommend to everyone looking for a vehicle.",
+          "Amazing experience from start to finish. The team was super helpful and made the process smooth. Highly recommend to anyone looking for a used vehicle.",
       },
       {
         "@type": "Review",
@@ -134,9 +134,9 @@ export default function StructuredData() {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Bad Credit Car Loans",
+          name: "Used Car Sales",
           description:
-            "Car financing for bad credit, no credit, new to Canada, first-time buyers, self-employed, students, and bankruptcy in Mississauga, Oakville, and the Greater Toronto Area.",
+            "150+ quality used cars, SUVs, and trucks for sale at our Mississauga and Oakville showrooms. Every vehicle comes with a complimentary CarFax report.",
         },
       },
       {
@@ -166,10 +166,10 @@ export default function StructuredData() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "Can I get approved for a car loan with bad credit in Mississauga?",
+        name: "What kinds of used vehicles does Peel Car Sales have?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes — Peel Car Sales works with all credit situations including new immigrants, students, first-time buyers, self-employed individuals, and those who have filed for bankruptcy. Our finance team gets most customers approved in as little as 5 minutes at both our Mississauga and Oakville locations.",
+          text: "Peel Car Sales carries a wide selection of 150+ used cars, SUVs, trucks, and sedans from popular brands like Honda, Toyota, Ford, Hyundai, and Mercedes-Benz. Our inventory changes regularly — browse online or visit either Mississauga or Oakville showroom to see the latest arrivals.",
         },
       },
       {
@@ -177,7 +177,7 @@ export default function StructuredData() {
         name: "Do you have used cars under $15,000 in Mississauga or Oakville?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes! We carry value deals starting well under $15,000. Our inventory includes vehicles starting from $8,991. Browse our full inventory of 150+ used cars and filter by price to find options in your budget at our Mississauga and Oakville dealerships.",
+          text: "Yes! We carry value-priced vehicles starting well under $15,000. Our inventory includes vehicles starting from $8,991. Browse our full inventory of 150+ used cars and filter by price to find options in your budget at our Mississauga and Oakville dealerships.",
         },
       },
       {
@@ -272,8 +272,8 @@ export default function StructuredData() {
       {
         "@type": "ListItem",
         position: 3,
-        name: "Financing",
-        item: "https://www.peelcarsales.com/car-loan-application",
+        name: "Trade-In",
+        item: "https://www.peelcarsales.com/trade-in",
       },
     ],
   };

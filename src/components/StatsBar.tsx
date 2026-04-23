@@ -5,7 +5,7 @@ import styles from "./StatsBar.module.css";
 
 const stats = [
   { num: "150+", label: "Vehicles In Stock" },
-  { num: "5 min", label: "Loan Approval" },
+  { num: "10+", label: "Years Serving GTA" },
   { num: "2", label: "GTA Locations" },
   { num: "4.8\u2605", label: "Google Rating" },
 ];

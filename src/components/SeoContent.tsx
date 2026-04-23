@@ -32,21 +32,18 @@ export default function SeoContent() {
             </svg>
           </button>
           <button onClick={open} className={styles.ctaOutline}>
-            Get Pre-Approved Today
+            Schedule a Test Drive
           </button>
         </div>
 
         <p className={styles.text}>
-          We specialize in <strong>bad credit car loans in Mississauga</strong>,{" "}
-          <strong>bad credit auto financing in Ontario</strong>, and <strong>no credit car loans</strong> — because
-          everyone deserves a second chance. Our finance team works with all credit situations:{" "}
-          <strong>bad credit car dealership</strong> approvals, <strong>subprime auto loans in Ontario</strong>,{" "}
-          <strong>bankruptcy car loans in the GTA</strong>, and <strong>car loan approval for bad credit</strong>. Are
-          you <strong>new to Canada</strong>? We offer <strong>newcomer car financing in Ontario</strong>,{" "}
-          <strong>first-time car buyer programs in Mississauga</strong>,{" "}
-          <strong>student car loans in Ontario</strong>, and <strong>self-employed car financing</strong>. Get approved
-          for a <strong>car loan in as little as 5 minutes</strong> — apply online or visit our showrooms on Derry Road
-          in Mississauga or Wyecroft Road in Oakville.
+          Every vehicle on our lot is hand-picked by our team and comes with a{" "}
+          <strong>complimentary CarFax vehicle history report</strong>. We pride ourselves on{" "}
+          <strong>transparent pricing</strong> and a no-pressure showroom experience. Whether you&apos;re looking for
+          your first car, upgrading your current vehicle, or shopping for a family SUV, our team will help you find the
+          right match. Visit our <strong>Derry Road showroom in Mississauga</strong> or our{" "}
+          <strong>Wyecroft Road location in Oakville</strong> — both open 6 days a week. Free coffee, friendly staff,
+          and test drives available on request.
         </p>
 
         <p className={styles.text}>

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | Peel Car Sales — Car Dealership Near Me | Used Cars Toronto",
   },
   description:
-    "Car dealership near me — 150+ used cars for sale in Toronto, Mississauga & Oakville. Bad credit car loans, car financing Toronto, no credit OK. Used car dealerships near me serving GTA, Brampton, Burlington. AutoTrader Best Priced Dealer 2025. Cars for sale near me — approved in 5 minutes. Call 905-678-0048.",
+    "Car dealership near me — 150+ quality used cars for sale in Toronto, Mississauga & Oakville. Used car dealerships serving GTA, Brampton, Burlington. AutoTrader Best Priced Dealer 2025. Visit our Mississauga or Oakville showroom. Call 905-678-0048.",
   keywords: [
     // Top 5 highest search volume keywords (Toronto GTA)
     "car dealerships near me",
@@ -30,8 +30,6 @@ export const metadata: Metadata = {
     "used car dealerships near me",
     "cars for sale Toronto",
     "cars for sale near me",
-    "car financing Toronto",
-    "bad credit car loans Toronto",
     // Primary high-volume keywords
     "used cars Mississauga",
     "used cars Oakville",
@@ -40,27 +38,9 @@ export const metadata: Metadata = {
     "used cars near me",
     "used cars for sale GTA",
     "used cars Brampton",
-    // Bad credit / financing keywords (high commercial intent)
-    "bad credit car loans Mississauga",
-    "bad credit car dealership",
-    "bad credit auto financing Ontario",
-    "no credit car loans",
-    "car financing bad credit GTA",
-    "bad credit car loans Toronto",
-    "bad credit car loans Oakville",
-    "no credit car loans Mississauga",
-    "car loan approval bad credit",
-    "subprime auto loans Ontario",
-    // New to Canada / niche financing
-    "new to Canada car loan",
-    "newcomer car financing Ontario",
-    "first time car buyer Mississauga",
-    "student car loan Ontario",
-    "self-employed car financing",
-    "bankruptcy car loan GTA",
     // Vehicle type keywords
-    "cheap used SUVs Mississauga",
-    "affordable used trucks Oakville",
+    "used SUVs Mississauga",
+    "used trucks Oakville",
     "used sedans for sale GTA",
     "used Honda Mississauga",
     "used Toyota Oakville",
@@ -107,9 +87,9 @@ export const metadata: Metadata = {
     locale: "en_CA",
     url: "https://www.peelcarsales.com",
     siteName: "Peel Car Sales",
-    title: "Peel Car Sales — Used Cars Mississauga & Oakville | Bad Credit Car Loans GTA",
+    title: "Peel Car Sales — Used Cars Mississauga & Oakville | Trusted GTA Dealership",
     description:
-      "150+ quality used cars in Mississauga & Oakville. Bad credit, no credit, new to Canada — approved in 5 minutes. AutoTrader Best Priced Dealer. Trade-in & financing. Call 905-678-0048.",
+      "150+ quality used cars in Mississauga & Oakville. AutoTrader Best Priced Dealer 2024 & 2025. Trade-ins welcome. Call 905-678-0048.",
     images: [
       {
         url: "/og-image.jpg",
@@ -121,9 +101,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Peel Car Sales — Used Cars Mississauga & Oakville | Any Credit Welcome",
+    title: "Peel Car Sales — Used Cars Mississauga & Oakville | Trusted GTA Dealership",
     description:
-      "150+ used cars. Bad credit OK. Approved in 5 minutes. Two GTA locations. AutoTrader Best Priced Dealer 2024 & 2025.",
+      "150+ quality used cars. Two GTA locations — Mississauga & Oakville. AutoTrader Best Priced Dealer 2024 & 2025.",
     images: ["/og-image.jpg"],
   },
   alternates: {

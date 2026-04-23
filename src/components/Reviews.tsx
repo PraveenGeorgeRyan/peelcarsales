@@ -4,7 +4,7 @@ import { useLeadForm } from "./LeadFormContext";
 import styles from "./Reviews.module.css";
 
 const reviews = [
-  { text: "Got my loan approved within 5 minutes. Best car buying experience. Must recommend to everyone looking for a vehicle.", name: "Om Sharma", via: "Google Review · Mississauga" },
+  { text: "Amazing experience from start to finish. The team was super helpful and made the process smooth. Highly recommend to anyone looking for a used vehicle.", name: "Om Sharma", via: "Google Review · Mississauga" },
   { text: "Looked at a car on Monday and by Thursday I was able to drive it home. Fast and efficient service, I would recommend anybody to get their car there!", name: "Jaspreet Singh", via: "Google Review · Brampton" },
   { text: "The service was excellent. Been to dealerships before but this was the best one so far. The team is very generous and takes the customer's word seriously.", name: "Akshit Chabba", via: "Google Review · Mississauga" },
   { text: "Great service, very good guiding and great value cars and deals. Staff is very generous. Special thanks to Inder bhaaji. Recommended to everyone.", name: "Harmandeep Singh", via: "Google Review · Oakville" },
