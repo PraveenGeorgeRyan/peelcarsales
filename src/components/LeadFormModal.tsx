@@ -84,6 +84,13 @@ export default function LeadFormModal() {
         }),
       }).catch((err) => console.error("LeadsBridge failed:", err));
 
+      // Fire Google Ads "Button Clicks" conversion on successful submission
+      if (typeof window !== "undefined" && typeof (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag === "function") {
+        (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", "conversion", {
+          send_to: "AW-946920610/s65pCKTurIoaEKK5w8MD",
+        });
+      }
+
       setSubmitted(true);
     } catch (err) {
       console.error("Lead submission failed:", err);
