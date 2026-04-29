@@ -84,10 +84,18 @@ export default function LeadFormModal() {
         }),
       }).catch((err) => console.error("LeadsBridge failed:", err));
 
-      // Fire Google Ads "Button Clicks" conversion on successful submission
+      // Fire Google Ads conversions on successful lead submission
       if (typeof window !== "undefined" && typeof (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag === "function") {
-        (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", "conversion", {
+        const gtag = (window as unknown as { gtag: (...args: unknown[]) => void }).gtag;
+        // "Button Clicks" conversion
+        gtag("event", "conversion", {
           send_to: "AW-946920610/s65pCKTurIoaEKK5w8MD",
+        });
+        // "Submit lead form" conversion
+        gtag("event", "conversion", {
+          send_to: "AW-946920610/SXj8CNmj8aQcEKK5w8MD",
+          value: 1.0,
+          currency: "CAD",
         });
       }
 
