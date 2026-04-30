@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { sendLeadNotification } from "@/lib/emailjs";
+import { MAKES, MODELS_BY_MAKE, PRICE_OPTIONS, formatPrice } from "@/lib/vehicleData";
 import { useLeadForm } from "./LeadFormContext";
 import styles from "./LeadFormModal.module.css";
 
@@ -12,11 +13,21 @@ export default function LeadFormModal() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const [make, setMake] = useState("");
+  const [model, setModel] = useState("");
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const overlayRef = useRef<HTMLDivElement>(null);
   const nameRef = useRef<HTMLInputElement>(null);
+
+  // Models filtered by selected make
+  const availableModels = useMemo(() => {
+    if (!make) return [];
+    return MODELS_BY_MAKE[make] || [];
+  }, [make]);
 
   useEffect(() => {
     if (isOpen && nameRef.current) {
@@ -40,6 +51,11 @@ export default function LeadFormModal() {
     return () => window.removeEventListener("keydown", handleEsc);
   }, [isOpen, close]);
 
+  // Reset model when make changes
+  useEffect(() => {
+    setModel("");
+  }, [make]);
+
   function handleOverlayClick(e: React.MouseEvent) {
     if (e.target === overlayRef.current) close();
   }
@@ -51,6 +67,12 @@ export default function LeadFormModal() {
       return;
     }
 
+    // Validate price range if both selected
+    if (minPrice && maxPrice && Number(minPrice) > Number(maxPrice)) {
+      setError("Minimum price cannot be greater than maximum price.");
+      return;
+    }
+
     setLoading(true);
     setError("");
 
@@ -58,6 +80,10 @@ export default function LeadFormModal() {
       name: name.trim(),
       phone: phone.trim(),
       email: email.trim() || "",
+      make: make || "",
+      model: model || "",
+      minPrice: minPrice || "",
+      maxPrice: maxPrice || "",
       createdAt: serverTimestamp(),
       source: window.location.pathname,
     };
@@ -80,6 +106,10 @@ export default function LeadFormModal() {
           last_name: nameParts.slice(1).join(" ") || "",
           email: email.trim() || "",
           phone: phone.trim(),
+          make: make || "",
+          model: model || "",
+          min_price: minPrice || "",
+          max_price: maxPrice || "",
           source: "Landing Page",
         }),
       }).catch((err) => console.error("LeadsBridge failed:", err));
@@ -115,6 +145,10 @@ export default function LeadFormModal() {
       setName("");
       setPhone("");
       setEmail("");
+      setMake("");
+      setModel("");
+      setMinPrice("");
+      setMaxPrice("");
       setError("");
     }, 300);
   }
@@ -177,6 +211,75 @@ export default function LeadFormModal() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
+            </div>
+
+            <div className={styles.fieldRow}>
+              <div className={styles.fieldWrap}>
+                <label htmlFor="lead-make">Make</label>
+                <select
+                  id="lead-make"
+                  name="make"
+                  value={make}
+                  onChange={(e) => setMake(e.target.value)}
+                  className={styles.select}
+                >
+                  <option value="">Any Make</option>
+                  {MAKES.map((m) => (
+                    <option key={m} value={m}>{m}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div className={styles.fieldWrap}>
+                <label htmlFor="lead-model">Model</label>
+                <select
+                  id="lead-model"
+                  name="model"
+                  value={model}
+                  onChange={(e) => setModel(e.target.value)}
+                  disabled={!make}
+                  className={styles.select}
+                >
+                  <option value="">{make ? "Any Model" : "Select Make First"}</option>
+                  {availableModels.map((m) => (
+                    <option key={m} value={m}>{m}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            <div className={styles.fieldRow}>
+              <div className={styles.fieldWrap}>
+                <label htmlFor="lead-min-price">Min Price</label>
+                <select
+                  id="lead-min-price"
+                  name="minPrice"
+                  value={minPrice}
+                  onChange={(e) => setMinPrice(e.target.value)}
+                  className={styles.select}
+                >
+                  <option value="">Min Price</option>
+                  {PRICE_OPTIONS.map((p) => (
+                    <option key={p} value={p}>{formatPrice(p)}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div className={styles.fieldWrap}>
+                <label htmlFor="lead-max-price">Max Price</label>
+                <select
+                  id="lead-max-price"
+                  name="maxPrice"
+                  value={maxPrice}
+                  onChange={(e) => setMaxPrice(e.target.value)}
+                  className={styles.select}
+                >
+                  <option value="">Max Price</option>
+                  {PRICE_OPTIONS.map((p) => (
+                    <option key={p} value={p}>{formatPrice(p)}</option>
+                  ))}
+                </select>
+              </div>
             </div>
 
             {error && <p className={styles.error}>{error}</p>}
