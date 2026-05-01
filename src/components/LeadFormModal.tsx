@@ -130,6 +130,11 @@ export default function LeadFormModal() {
       }
 
       setSubmitted(true);
+
+      // Redirect to inventory page after a short "thank you" moment
+      setTimeout(() => {
+        window.location.href = "https://www.peelcarsales.com/used-cars/";
+      }, 2000);
     } catch (err) {
       console.error("Lead submission failed:", err);
       setError("Something went wrong. Please try again or call us at 905-678-0048.");
